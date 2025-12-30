@@ -1,0 +1,96 @@
+
+/* CSS implementation of Powerline symbols/Agnoster theme */
+:root {
+  --prompt-height: 24px;
+  --arrow-size: 12px; /* Half of height */
+}
+
+.agnoster-prompt {
+  display: flex;
+  align-items: center;
+  line-height: var(--prompt-height);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
+}
+
+/* Base segment style */
+.segment {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: var(--prompt-height);
+  color: var(--prompt-user-fg);
+  font-weight: bold;
+}
+
+/* The arrow triangle */
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: var(--arrow-size) solid transparent;
+  border-bottom: var(--arrow-size) solid transparent;
+  border-left-style: solid;
+  border-left-width: var(--arrow-size);
+  z-index: 10;
+  /* Crucial: remove extra spacing */
+  margin: 0; 
+  padding: 0;
+}
+
+/* USER SEGMENT */
+.seg-user {
+  background-color: var(--prompt-user-bg);
+  color: var(--prompt-user-fg);
+  padding-left: 10px;
+  z-index: 20;
+}
+
+.arrow-user-dir {
+  border-left-color: var(--prompt-user-bg);
+  z-index: 21; /* Must be above next segment background */
+}
+
+/* DIR SEGMENT */
+.seg-dir {
+  background-color: var(--prompt-dir-bg);
+  color: var(--prompt-dir-fg);
+  z-index: 19;
+  /* Overlap logic: slide it under the previous arrow */
+  margin-left: calc(var(--arrow-size) * -1); 
+  padding-left: calc(var(--arrow-size) + 8px);
+}
+
+.arrow-dir-end {
+  border-left-color: var(--prompt-dir-bg);
+  z-index: 20;
+  /* No next segment, so no negative margin needed on next element, 
+     but this arrow sits naturally after seg-dir */
+}
+
+
+.command-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.input-area {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+  margin-left: 10px;
+  caret-color: var(--text-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .agnoster-prompt {
+    font-size: 0.8rem;
+  }
+}

@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow:
 Disallow: /cgi-bin/
-Sitemap: https://javad.id.ir/sitemap.xml
+Sitemap: https://javad.dev/sitemap.xml

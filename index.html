@@ -1,89 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Javad Rajabzadeh - Senior Software Engineer specialized in system architecture, blockchain, and backend development.">
-  <meta name="keywords" content="Javad Rajabzadeh, Software Engineer, Golang, Blockchain, Backend Developer, Meilisearch, Artogenia">
-  <meta name="author" content="Javad Rajabzadeh">
-  <title>Javad Rajabzadeh</title>
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://javad.dev/">
-  <meta property="og:title" content="Javad Rajabzadeh - Senior Software Engineer">
-  <meta property="og:description" content="Explore the work and career of Javad Rajabzadeh, a seasoned software engineer with a focus on backend systems, blockchain, and modern architecture.">
-  <meta property="og:image" content="https://avatars.githubusercontent.com/u/56496801?v=4">
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://javad.dev/">
-  <meta property="twitter:title" content="Javad Rajabzadeh - Senior Software Engineer">
-  <meta property="twitter:description" content="Explore the work and career of Javad Rajabzadeh, a seasoned software engineer with a focus on backend systems, blockchain, and modern architecture.">
-  <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/56496801?v=4">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" href="./favicon.ico" />
+  <!-- SEO & Meta Information -->
+  <title>Javad Rajabzadeh | Senior Software Engineer | Blockchain & IoT Expert</title>
+  <meta name="description" content="Portfolio of Javad Rajabzadeh, a Senior Software Engineer with 10+ years of expertise in Blockchain (Pactus), IoT, AI, and business software solutions. View projects, resume, and contact info." />
+  <meta name="keywords" content="Javad Rajabzadeh, Software Engineer, Blockchain Developer, Pactus, IoT, AI, Augmented Reality, Golang, React, Distributed Systems, Open Source" />
+  <meta name="author" content="Javad Rajabzadeh" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://javad.dev/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://javad.dev/" />
+  <meta property="og:title" content="Javad Rajabzadeh - Senior Software Engineer" />
+  <meta property="og:description" content="Explore the terminal portfolio of Javad Rajabzadeh. Expert in Blockchain, IoT, and High-Performance Software Architecture." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/56496801?v=4" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://javad.dev/" />
+  <meta property="twitter:title" content="Javad Rajabzadeh - Senior Software Engineer" />
+  <meta property="twitter:description" content="Senior Engineer specializing in Blockchain and IoT. Creator of Pactus Blockchain." />
+  <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/56496801?v=4" />
+  <meta property="twitter:creator" content="@Ja7adR" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Javad Rajabzadeh",
+      "url": "https://javad.dev",
+      "image": "https://avatars.githubusercontent.com/u/56496801?v=4",
+      "sameAs": [
+        "https://github.com/ja7ad",
+        "https://www.linkedin.com/in/ja7ad/",
+        "https://twitter.com/Ja7adR",
+        "https://scholar.google.com/citations?user=PXkS0K0AAAAJ"
+      ],
+      "jobTitle": "Senior Software Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Blockchain & IoT Industry"
+      },
+      "description": "Senior Software Engineer specialized in analysis, design, development, and implementation of blockchain, AI, and AR solutions."
+    }
+  </script>
+
   <style>
+    :root {
+      --bg-color: #282c34;
+      --text-color: #abb2bf;
+      --prompt-user-bg: #333333;
+      --prompt-user-fg: #ffffff;
+      --prompt-dir-bg: #40c4ff;
+      --prompt-dir-fg: #000000;
+      --success-color: #98c379;
+      --error-color: #e06c75;
+      --link-color: #61afef;
+    }
+
     body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+      overflow: hidden; /* Prevent body scroll, handle inside app */
+      height: 100dvh;
+      width: 100vw;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    #app {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
   </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@18.2.0",
+      "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+    }
+  }
+  </script>
 </head>
-
-<body class="min-h-screen flex items-center justify-center text-gray-100 font-sans">
-  <div class="w-full min-h-screen flex items-center justify-center px-6 py-12">
-    <div class="w-full max-w-6xl bg-white bg-opacity-10 backdrop-blur-md rounded-3xl shadow-2xl p-10 border border-white border-opacity-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <!-- Profile Section -->
-        <div class="flex flex-col items-center lg:items-start">
-          <img class="w-40 h-40 rounded-full border-4 border-white shadow-md mb-6" src="https://avatars.githubusercontent.com/u/56496801?v=4" alt="Javad Rajabzadeh">
-          <h1 class="text-4xl font-bold leading-tight">Javad Rajabzadeh</h1>
-          <p class="text-blue-300 text-xl mt-2">Senior Software Engineer</p>
-          <p class="mt-6 text-gray-300 text-sm leading-relaxed max-w-lg">
-Being an IT professional for over 9 years and possessing various hands-on experience across several IT domains, I focus primarily on the analysis, design, development, and implementation of different applications. I have gained substantial experience in Blockchain, AI software development, and Augmented Reality (AR) solutions.
-
-Throughout my career, I remain consistent in exhibiting the ability to lead others effectively, think strategically, and be innovative in problem-solving to produce terrific results. By paying great attention to detail and a firm belief in quality, I have been able to ensure my projects go beyond the client perspective.
-
-I possess a multitude of skills with programming languages, database management systems, building AI solutions, and developing AR. I am quickly adjustable and able to assess many new technologies and integrate them to optimize work, personnel, and generate efficient processes that would help drive business.
-          </p>
-
-          <div class="flex space-x-4 mt-6">
-            <a href="https://github.com/Ja7ad" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="h-6 w-6" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/ja7ad/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" class="h-6 w-6" alt="LinkedIn"></a>
-            <a href="https://twitter.com/Ja7adR" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" class="h-6 w-6" alt="Twitter"></a>
-            <a href="https://scholar.google.com/citations?user=PXkS0K0AAAAJ" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlescholar.svg" class="h-6 w-6" alt="Google Scholar"></a>
-          </div>
-
-          <div class="mt-8 flex gap-4">
-            <a href="https://raw.githubusercontent.com/Ja7ad/Ja7ad.github.io/main/resume/Javad.pdf" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition">Resume</a>
-            <a href="https://nowpayments.io/donation?api_key=95e64718-4664-4877-a8d5-6c9049284d25" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 text-sm font-medium transition">Donate</a>
-          </div>
-        </div>
-
-        <!-- Featured Projects Section -->
-        <div>
-          <h2 class="text-2xl font-semibold mt-4 mb-6">Featured Projects</h2>
-          <div class="space-y-4">
-            <a href="https://github.com/Ja7ad/fluora" target="_blank" class="block bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition">
-              <h3 class="font-semibold text-lg">Floura</h3>
-              <p class="text-sm text-gray-300">A AI toolset for with specific instructions builder.</p>
-            </a>
-            <a href="https://meilisearch.com" target="_blank" class="block bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition">
-              <h3 class="font-semibold text-lg">Meilisearch</h3>
-              <p class="text-sm text-gray-300">Open-source lightning-fast search engine built for modern web applications.</p>
-            </a>
-            <a href="https://artogenia.com" target="_blank" class="block bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition">
-              <h3 class="font-semibold text-lg">Artogenia</h3>
-              <p class="text-sm text-gray-300">A creative marketplace for digital and physical arts, powered by Solana NFTs.</p>
-            </a>
-                        <a href="https://disc.javad.dev" target="_blank" class="block bg-white bg-opacity-10 p-4 rounded-md hover:bg-opacity-20 transition">
-              <h3 class="font-semibold text-lg">DISC</h3>
-              <p class="text-sm text-gray-300">A ChatGPT-powered bot offering a free DISC personality test.</p>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./src/index.tsx"></script>
 </body>
-
 </html>
