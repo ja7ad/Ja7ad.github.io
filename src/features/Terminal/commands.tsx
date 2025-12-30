@@ -9,36 +9,64 @@ export const LONG_BIO = `Being an IT professional for over 9 years and possessin
 // Updated with real projects from search results
 const PROJECTS = [
   {
-    name: "Pactus Blockchain",
-    desc: "A fast, secure, and fully decentralized blockchain built with Go and SSPOS consensus.",
-    url: "https://pactus.org"
+    name: "Aerium | Maintainer and core developer",
+    desc: "Aerium is a platform designed to transform the way communities agree, decide, and grow. With transparency and innovation at its core, Aerium makes collaboration not only possible but effortless.",
+    url: "https://aerium.network/"
   },
   {
-    name: "PacViewer",
-    desc: "Real-time blockchain explorer and analytics platform for the Pactus chain.",
-    url: "https://pacviewer.com"
+    name: "Meilisearch Go SDK | Maintainer",
+    desc: "Meilisearch Go SDK is the official Golang client for the Meilisearch search engine, providing seamless indexing, searching, and document management.",
+    url: "https://github.com/meilisearch/meilisearch-go"
   },
   {
-    name: "Floura",
-    desc: "An AI toolset and specific instructions builder for advanced automation.",
-    url: "https://github.com/Ja7ad/fluora"
+    name: "Meilisearch | Contributer",
+    desc: "Meilisearch helps you shape a delightful search experience in a snap, offering features that work out of the box to speed up your workflow.",
+    url: "https://github.com/meilisearch/meilisearch"
   },
   {
-    name: "Artogenia",
+    name: "Artogenia | Backend Developer",
     desc: "A creative marketplace for digital and physical arts, powered by Solana NFTs.",
     url: "https://artogenia.com"
   },
   {
-    name: "DISC Bot",
-    desc: "A ChatGPT-powered bot offering a free DISC personality test analysis.",
-    url: "https://disc.javad.dev"
+    name: "TrustWallet core | Contributer",
+    desc: "Cross-platform, cross-blockchain wallet library.",
+    url: "https://github.com/trustwallet/wallet-core"
   },
   {
-    name: "Blockchain Implementation",
+    name: "Blockchain Implementation | Researcher and Contributer",
     desc: "A Proof-of-Work blockchain implementation written in Go for educational purposes.",
     url: "https://github.com/Ja7ad/Blockchain"
+  },
+  {
+    name: "OTP | Creator",
+    desc: "A high-performance, zero-dependency Go package for generating and validating TOTP, HOTP and OCRA one-time passwords — RFC 4226, RFC 6238 and RFC 6287 compliant.",
+    url: "https://github.com/ja7ad/otp"
+  },
+  {
+    name: "Consumpion | Creator",
+    desc: "Process consumption calculator for watt usage on Linux VMs or servers.",
+    url: "https://github.com/ja7ad/consumption"
+  },
+  {
+    name: "Pactus Blockchain | Contributer",
+    desc: "A fast, secure, and fully decentralized blockchain built with Go and SSPOS consensus.",
+    url: "https://pactus.org"
   }
 ];
+
+const HONORS = [
+  {
+    name: "OC2 – AquaSense Winner",
+    desc: "AquaSense is a real-time water quality monitoring system for urban and rural environments, using 20 sensors to measure parameters like pH and turbidity every 10 seconds to detect contamination from sources such as industrial discharges or agricultural runoff. Integrated with NebulOuS’s Meta-Operating System, it employs a three-step IoT pipeline where sensors send data via MQTT to Raspberry Pi 4 edge devices running Mosquitto and ThingsBoard, which preprocesses readings into 1-minute averages, filters noise, and reduces cloud data load by 20%. A cloud-based TensorFlow LSTM model then analyzes the data with 95% anomaly detection accuracy within 5 seconds. The IoT Pipeline Orchestrator dynamically scales preprocessing and AI modules to handle spikes of 100–1000 readings/sec with <2-second latency and 99% uptime. Alerts are delivered via APIs or dashboards for rapid response, ensuring regulatory compliance and reducing health risks. By prioritizing edge processing for urban sensors, AquaSense cuts cloud energy use by 30% and supports UN SDG 6, while its scalable, containerized architecture also enables applications in air quality monitoring and smart agriculture.",
+    url: "https://nebulouscloud.eu/oc2-winner-aquasense/"
+  },
+  {
+    name: "OC5 - Pactus Nexus",
+    desc: "Pactus Nexus is an open-source, energy-efficient, and scalable blockchain solution designed to meet the objectives of the NGI TrustChain initiative. Built on the Pactus platform and powered by an enhanced Solid State Proof of Stake (SSPoS) consensus mechanism, the project aims to deliver a secure, interoperable, and user-friendly framework for decentralized applications (dApps) across various sectors, including finance, healthcare, and supply chain management.",
+    url: "https://trustchain.ngi.eu/pactus-nexus/"
+  }
+]
 
 const SOCIALS = [
   { name: "GitHub", url: "https://github.com/ja7ad" },
@@ -62,6 +90,7 @@ export const COMMANDS_LIST = [
   { cmd: 'help', desc: 'list all commands' },
   { cmd: 'info', desc: 'about javad rajabzadeh' },
   { cmd: 'projects', desc: 'view portfolio & works' },
+  { cmd: 'honors', desc: 'view project grants' },
   { cmd: 'socials', desc: 'connect on social media' },
   { cmd: 'contact', desc: 'email & contact' },
   { cmd: 'resume', desc: 'download resume pdf' },
@@ -123,7 +152,25 @@ export const executeCommand = (cmd: string): React.ReactNode => {
           ))}
         </div>
       );
-
+    case "honors":
+            return (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '10px' }}>
+          {HONORS.map((p, i) => (
+            <div key={i}>
+              <div style={{ color: '#98c379', fontWeight: 'bold' }}>{i + 1}. {p.name}</div>
+              <div style={{ marginLeft: '1rem', marginBottom: '4px', color: '#abb2bf' }}>{p.desc}</div>
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginLeft: '1rem', color: '#61afef', textDecoration: 'underline' }}
+              >
+                {p.url}
+              </a>
+            </div>
+          ))}
+        </div>
+      );
     case 'socials':
       return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px' }}>
