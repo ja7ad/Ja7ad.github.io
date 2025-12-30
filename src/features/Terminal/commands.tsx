@@ -73,7 +73,7 @@ export const COMMANDS_LIST = [
 
 const ResumeDownloader = () => {
   useEffect(() => {
-    const resumeUrl = "https://raw.githubusercontent.com/ja7ad/Ja7ad.github.io/refs/heads/gh-pages/assets/Javad.pdf";
+    const resumeUrl = "https://raw.githubusercontent.com/Ja7ad/Ja7ad.github.io/main/resume/Javad.pdf";
     window.open(resumeUrl, '_blank');
   }, []);
 
