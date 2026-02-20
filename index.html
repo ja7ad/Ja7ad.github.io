@@ -1,38 +1,23 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- SEO & Meta Information -->
-  <title>Javad Rajabzadeh | Senior Software Engineer | Blockchain & IoT Expert</title>
-  <meta name="description" content="Portfolio of Javad Rajabzadeh, a Senior Software Engineer with 10+ years of expertise in Blockchain (Pactus), IoT, AI, and business software solutions. View projects, resume, and contact info." />
-  <meta name="keywords" content="Javad Rajabzadeh, Software Engineer, Blockchain Developer, Pactus, IoT, AI, Augmented Reality, Golang, React, Distributed Systems, Open Source" />
-  <meta name="author" content="Javad Rajabzadeh" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://javad.dev/" />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javad Rajabzadeh | Senior software engineer</title>
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://javad.dev/" />
   <meta property="og:title" content="Javad Rajabzadeh - Senior Software Engineer" />
   <meta property="og:description" content="Explore the terminal portfolio of Javad Rajabzadeh. Expert in Blockchain, IoT, and High-Performance Software Architecture." />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/56496801?v=4" />
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://javad.dev/" />
   <meta property="twitter:title" content="Javad Rajabzadeh - Senior Software Engineer" />
   <meta property="twitter:description" content="Senior Engineer specializing in Blockchain and IoT. Creator of Pactus Blockchain." />
   <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/56496801?v=4" />
   <meta property="twitter:creator" content="@Ja7adR" />
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
+   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -53,51 +38,9 @@
       "description": "Senior Software Engineer specialized in analysis, design, development, and implementation of blockchain, AI, and AR solutions."
     }
   </script>
-
-  <style>
-    :root {
-      --bg-color: #282c34;
-      --text-color: #abb2bf;
-      --prompt-user-bg: #333333;
-      --prompt-user-fg: #ffffff;
-      --prompt-dir-bg: #40c4ff;
-      --prompt-dir-fg: #000000;
-      --success-color: #98c379;
-      --error-color: #e06c75;
-      --link-color: #61afef;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
-      overflow: hidden; /* Prevent body scroll, handle inside app */
-      height: 100dvh;
-      width: 100vw;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    #app {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
-  <script type="importmap">
-  {
-    "imports": {
-      "react": "https://esm.sh/react@18.2.0",
-      "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
-    }
-  }
-  </script>
-</head>
-<body>
-  <div id="app"></div>
-  <script type="module" src="./src/index.tsx"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
