@@ -471,7 +471,7 @@ export default function App() {
                  <p className="text-[#8b949e] text-base leading-relaxed mb-8 flex-grow">
                    Deep dives into system architecture, Go programming, and decentralized networks. Join my newsletter to get the latest engineering insights, architecture patterns, and thoughts directly in your inbox.
                  </p>
-                 <a href="https://bitstack.substack.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#e3b341] transition-colors">
+                 <a href="https://bitstack.substack.com/" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 bg-[#238636] hover:bg-[#2ea043] text-white px-5 py-2.5 rounded-lg font-semibold transition-all border border-white/10 w-fit">
                    Read Articles <ChevronRight size={18} />
                  </a>
               </div>
@@ -487,7 +487,7 @@ export default function App() {
                  <p className="text-[#8b949e] text-base leading-relaxed mb-8 flex-grow">
                    Quick tutorials, open-source updates, and technical discussions with the developer community. A collection of practical guides and code snippets for everyday engineering challenges.
                  </p>
-                 <a href="http://dev.to/gopher" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#e3b341] transition-colors">
+                 <a href="http://dev.to/gopher" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 bg-[#238636] hover:bg-[#2ea043] text-white px-5 py-2.5 rounded-lg font-semibold transition-all border border-white/10 w-fit">
                    Explore Posts <ChevronRight size={18} />
                  </a>
               </div>
