@@ -1,0 +1,305 @@
+/*
+  Javad Rajabzadeh Personal Website Stylesheet
+  Classic Web 2005 / Old-School Minimalist Aesthetic
+*/
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  color: #222222;
+  background-color: #ebebeb;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border: 1px solid #999999;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 26px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  color: #000000;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #555555;
+  margin: 0 0 15px 0;
+}
+
+nav {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+nav a:hover {
+  background-color: #0000cc;
+  color: #ffffff !important;
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  background-color: #f0f0f0;
+  padding: 4px 10px;
+  border-left: 6px solid #555555;
+  border-bottom: 1px solid #cccccc;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  color: #000000;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+a {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+a:hover {
+  color: #ff0000;
+  background-color: #ffffcc;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #999999;
+  height: 0;
+  margin: 15px 0;
+}
+
+hr.double-line {
+  border-top: 3px double #999999;
+}
+
+ul {
+  margin: 0 0 15px 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0 20px 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #999999;
+  padding: 8px;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.experience-block, .award-block {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #cccccc;
+}
+
+.experience-block:last-child, .award-block:last-child {
+  border-bottom: none;
+}
+
+.meta {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.skills-list {
+  list-style-type: square;
+}
+
+.skills-list li strong {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+}
+
+footer {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  color: #666666;
+  margin-top: 40px;
+  border-top: 1px solid #cccccc;
+  padding-top: 15px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 600px) {
+  body {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .container {
+    padding: 15px 15px;
+    border: 1px solid #999999;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  header {
+    margin-bottom: 15px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  nav {
+    font-size: 11px;
+    line-height: 2;
+  }
+  
+  nav a {
+    display: inline-block;
+    padding: 1px 3px;
+    margin-bottom: 2px;
+  }
+  
+  h2 {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    padding: 3px 6px;
+    border-left-width: 4px;
+  }
+  
+  /* Stack the profile table on mobile */
+  .profile-table, 
+  .profile-table tbody, 
+  .profile-table tr, 
+  .profile-table td {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+  
+  .profile-table td {
+    text-align: center;
+    margin-bottom: 15px !important;
+  }
+  
+  .profile-table td:last-child {
+    text-align: left;
+    margin-bottom: 0 !important;
+  }
+  
+  .profile-table img {
+    margin: 0 auto;
+    width: 130px;
+  }
+
+  .data-table {
+    font-size: 11px;
+  }
+
+  #backToTop {
+    bottom: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Back to Top Button */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px 10px;
+  border: 1px solid #000000;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+#backToTop:hover {
+  background-color: #0000cc;
+  color: #ffffff;
+}
+
+/* Print optimizations */
+@media print {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0;
+  }
+  .container {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+  }
+  #backToTop {
+    display: none !important;
+  }
+}
