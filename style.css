@@ -311,6 +311,16 @@ footer {
   max-width: 880px;
 }
 
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px auto;
+  border-radius: 4px;
+  border: 1px solid #d0d4dc;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.08);
+}
+
 /* Inline Code and Chroma One Dark Highlight Code Blocks */
 code {
   font-family: "Courier New", Courier, monospace;
