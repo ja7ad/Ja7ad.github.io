@@ -88,6 +88,8 @@ To eliminate matrix inversions and full eigenvalue decompositions:
 
 This algorithmic optimization reduces complexity to $\mathcal{O}(M^2)$, ensuring numerical stability under 32-bit and 16-bit fixed-point quantization on embedded edge hardware.
 
+![Neural Covariance Attention Mask & Computational Complexity Benchmark](/images/rankn_dsp_benchmark_plot.png)
+
 ---
 
 ## 4. Python / NumPy Reference Implementation
@@ -167,6 +169,8 @@ By quantizing the neural model into INT16 ONNX format (`qwise_int16.ort`) and ru
 - **Processing Latency**: Per-frame STFT latency dropped to **< 3ms** at 16kHz sampling rates.
 - **Energy Footprint**: Reduced CPU power consumption by up to **30%**, extending battery runtime on drone flight controllers and wearable robotics.
 - **Noise Suppression**: Achieved substantial Signal-to-Noise Ratio (SNR) improvements under non-stationary drone rotor noise.
+
+![Spatial Directivity Beampattern & SNR Enhancement](/images/rankn_beampattern_snr_plot.png)
 
 ### Open-Source Implementations & Live Demos
 
