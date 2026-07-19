@@ -17,6 +17,17 @@
     {{ .Content }}
   </div>
 
+  <div class="post-citation">
+    <h3>Cite As</h3>
+    <div class="citation-box">
+      {{ if .Params.citation }}
+        {{ .Params.citation | markdownify }}
+      {{ else }}
+        {{ site.Params.author }} ({{ .Date.Format "2006" }}). {{ .Title }}. <a href="{{ .Permalink }}">{{ .Permalink }}</a>. Retrieved {{ now.Format "January 2, 2006" }}.
+      {{ end }}
+    </div>
+  </div>
+
   <hr class="double-line" />
 
   <div class="post-navigation">

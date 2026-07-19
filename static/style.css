@@ -442,6 +442,37 @@ pre code {
   box-sizing: border-box;
 }
 
+.post-citation {
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.post-citation h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.citation-box {
+  background-color: #f8f9fa;
+  border: 1px solid #d0d4dc;
+  border-left: 4px solid #006622;
+  padding: 12px 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: #2d3748;
+  word-break: break-word;
+  border-radius: 3px;
+}
+
+.citation-box p {
+  margin: 0;
+}
+
 .post-navigation {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
