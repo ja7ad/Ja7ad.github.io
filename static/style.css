@@ -473,6 +473,14 @@ pre code {
   margin: 0;
 }
 
+.post-contact-note {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13.5px;
+  color: #444444;
+  margin-top: 18px;
+  margin-bottom: 20px;
+}
+
 .post-navigation {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;

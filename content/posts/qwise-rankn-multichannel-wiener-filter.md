@@ -4,7 +4,6 @@ date: 2026-07-19T22:00:00+03:30
 draft: false
 description: "Solving matrix inversion bottlenecks in Multi-channel Wiener Filtering (MWF) using neural covariance attention and complex Conjugate Gradient solver for low-power drone and robotics hardware."
 tags: ["signalprocessing", "deeplearning", "math", "robotics", "edgeai", "python", "matlab"]
-citation: "Javad Rajabzadeh (2026). Rank-N multichannel Wiener filter speech enhancer ([https://uk.mathworks.com/matlabcentral/fileexchange/184040-rank-n-multichannel-wiener-filter-speech-enhancer](https://uk.mathworks.com/matlabcentral/fileexchange/184040-rank-n-multichannel-wiener-filter-speech-enhancer)), MATLAB Central File Exchange. Retrieved July 19, 2026."
 ---
 
 In real-world acoustic engineering—especially on **drones, autonomous robotic platforms, and ultra-low-power edge processors**—enhancing speech signals in real time presents a severe computational bottleneck. Microphones mounted on moving drones or robotic units encounter heavy spatial interference, rotor harmonics, and turbulent wind noise.
@@ -178,7 +177,3 @@ By quantizing the neural model into INT16 ONNX format (`qwise_int16.ort`) and ru
 - ⚡ **Live Interactive Web Demo**:  
   Try a production quantized deployment (Q-WiSE) directly in your browser:  
   [https://sensifai-qwise.hf.space/](https://sensifai-qwise.hf.space/)
-
----
-
-*For technical inquiries or discussions on signal processing, edge AI, and embedded systems engineering, connect via [LinkedIn](https://www.linkedin.com/in/ja7ad/) or [GitHub](https://github.com/ja7ad).*

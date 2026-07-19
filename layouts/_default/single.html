@@ -20,13 +20,13 @@
   <div class="post-citation">
     <h3>Cite As</h3>
     <div class="citation-box">
-      {{ if .Params.citation }}
-        {{ .Params.citation | markdownify }}
-      {{ else }}
-        {{ site.Params.author }} ({{ .Date.Format "2006" }}). {{ .Title }}. <a href="{{ .Permalink }}">{{ .Permalink }}</a>. Retrieved {{ now.Format "January 2, 2006" }}.
-      {{ end }}
+      {{ site.Params.author }} ({{ .Date.Format "2006" }}). <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong> ({{ .Permalink }}). <em>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</em>. Retrieved {{ now.Format "January 2, 2006" }}.
     </div>
   </div>
+
+  <p class="post-contact-note">
+    <em>For technical inquiries or discussions on signal processing, edge AI, and embedded systems engineering, connect via <a href="https://www.linkedin.com/in/ja7ad/" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href="https://github.com/ja7ad" target="_blank" rel="noopener noreferrer">GitHub</a>.</em>
+  </p>
 
   <hr class="double-line" />
 
