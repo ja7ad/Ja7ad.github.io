@@ -30,6 +30,7 @@
 <!-- On-Demand Lazy Loaded Mermaid JS -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // Lazy Load Mermaid Diagrams
     if (document.querySelector('.mermaid')) {
       var script = document.createElement('script');
       script.src = "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js";
@@ -44,6 +45,42 @@
         }
       };
       document.body.appendChild(script);
+    }
+
+    // Lazy Load KaTeX Math Equations On-Demand
+    var bodyText = document.body ? document.body.innerText : '';
+    if (bodyText.indexOf('$') !== -1 || document.querySelector('.katex-display, .katex')) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css';
+      css.crossOrigin = 'anonymous';
+      document.head.appendChild(css);
+
+      var js = document.createElement('script');
+      js.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js';
+      js.crossOrigin = 'anonymous';
+      js.defer = true;
+      js.onload = function() {
+        var autoRender = document.createElement('script');
+        autoRender.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js';
+        autoRender.crossOrigin = 'anonymous';
+        autoRender.defer = true;
+        autoRender.onload = function() {
+          if (window.renderMathInElement) {
+            renderMathInElement(document.body, {
+              delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false}
+              ],
+              throwOnError: false
+            });
+          }
+        };
+        document.body.appendChild(autoRender);
+      };
+      document.body.appendChild(js);
     }
   });
 </script>
