@@ -18,7 +18,7 @@ disableKinds = []
     isPlainText = true
     isHTML = false
     notAlternative = false
-    noUgly = false
+    ugly = true
 
   [outputFormats.LLMS]
     mediaType = "text/plain"

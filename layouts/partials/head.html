@@ -1,31 +1,37 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
+
 {{ range .AlternativeOutputFormats -}}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Title | default site.Title }} ({{ .Name }})">
 {{ end -}}
-<meta http-equiv="Cache-Control" content="public, max-age=604800" />
-<title>{{ if .Title }}{{ .Title }} | {{ site.Title }}{{ else }}{{ site.Title }}{{ end }}</title>
 
-<!-- Open Graph / Twitter Meta Tags -->
+<meta http-equiv="Cache-Control" content="public, max-age=604800" />
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | Javad Rajabzadeh{{ end }}</title>
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Javad Rajabzadeh" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
 <meta property="og:image" content="{{ site.Params.avatar }}" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="{{ .Permalink }}" />
-<meta property="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}" />
-<meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
-<meta property="twitter:image" content="{{ site.Params.avatar }}" />
-<meta property="twitter:creator" content="{{ site.Params.twitterCreator }}" />
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ site.Params.twitterCreator }}" />
+<meta name="twitter:creator" content="{{ site.Params.twitterCreator }}" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
+<meta name="twitter:image" content="{{ site.Params.avatar }}" />
 
 <link rel="stylesheet" href="{{ "style.css" | relURL }}" />
 
-<!-- JSON-LD -->
+<!-- Schema.org JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,6 +49,35 @@
   "description": "{{ site.Params.description }}"
 }
 </script>
+
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "{{ .Title }}",
+  "description": "{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.Params.author }}",
+    "url": "{{ site.BaseURL }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.Params.author }}",
+    "url": "{{ site.BaseURL }}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+  {{ with .Params.tags }},"keywords": "{{ delimit . ", " }}"{{ end }}
+}
+</script>
+{{ end }}
 
 <!-- KaTeX support for LaTeX math equations -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
