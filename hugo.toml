@@ -54,5 +54,5 @@ disableKinds = []
 [params]
   description = "Explore the personal portfolio and tech blog of Javad Rajabzadeh. Expert in Blockchain, IoT, and High-Performance Software Architecture."
   author = "Javad Rajabzadeh"
-  avatar = "https://avatars.githubusercontent.com/u/56496801?v=4"
+  avatar = "/avatar.jpg"
   twitterCreator = "@Ja7adR"

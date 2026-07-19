@@ -5,6 +5,11 @@
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
+<!-- Preconnect & DNS-Prefetch for Fast CDN Connections -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+<link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin />
+
 {{ range .AlternativeOutputFormats -}}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Title | default site.Title }} ({{ .Name }})">
 {{ end -}}
@@ -19,7 +24,7 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
-<meta property="og:image" content="{{ site.Params.avatar }}" />
+<meta property="og:image" content="{{ site.Params.avatar | absURL }}" />
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -27,9 +32,10 @@
 <meta name="twitter:creator" content="{{ site.Params.twitterCreator }}" />
 <meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
 <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
-<meta name="twitter:image" content="{{ site.Params.avatar }}" />
+<meta name="twitter:image" content="{{ site.Params.avatar | absURL }}" />
 
-<link rel="stylesheet" href="{{ "style.css" | relURL }}" />
+{{ $style := resources.Get "style.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
 
 <!-- Schema.org JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -38,7 +44,7 @@
   "@type": "Person",
   "name": "{{ site.Params.author }}",
   "url": "{{ site.BaseURL }}",
-  "image": "{{ site.Params.avatar }}",
+  "image": "{{ site.Params.avatar | absURL }}",
   "sameAs": [
     "https://github.com/ja7ad",
     "https://www.linkedin.com/in/ja7ad/",
@@ -79,8 +85,9 @@
 </script>
 {{ end }}
 
-<!-- KaTeX support for LaTeX math equations -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
+<!-- Non-Blocking Async KaTeX Support for Math Equations -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous"></noscript>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"
   onload="renderMathInElement(document.body, {

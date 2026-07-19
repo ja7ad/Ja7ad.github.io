@@ -27,14 +27,23 @@
   }
 </script>
 
-<!-- Mermaid JS Diagram Support -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<!-- On-Demand Lazy Loaded Mermaid JS -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'neutral',
-      securityLevel: 'loose'
-    });
+    if (document.querySelector('.mermaid')) {
+      var script = document.createElement('script');
+      script.src = "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js";
+      script.async = true;
+      script.onload = function() {
+        if (window.mermaid) {
+          mermaid.initialize({
+            startOnLoad: true,
+            theme: 'neutral',
+            securityLevel: 'loose'
+          });
+        }
+      };
+      document.body.appendChild(script);
+    }
   });
 </script>
