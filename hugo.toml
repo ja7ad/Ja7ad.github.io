@@ -1,7 +1,6 @@
 baseURL = 'https://javad.dev/'
 locale = 'en-us'
 title = 'Javad Rajabzadeh | Senior Software Engineer'
-uglyURLs = true
 
 # Render static files directly
 disableKinds = []
@@ -19,6 +18,7 @@ disableKinds = []
     isPlainText = true
     isHTML = false
     notAlternative = false
+    noUgly = false
 
   [outputFormats.LLMS]
     mediaType = "text/plain"
