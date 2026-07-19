@@ -1,0 +1,33 @@
+# {{ site.Params.author }} - Senior Software Engineer
+
+> {{ site.Params.description }}
+
+Primary Website: {{ site.BaseURL }}
+Markdown Homepage: {{ site.BaseURL }}index.md
+
+## About Me
+With over nine years of experience in software engineering, I specialize in architecting high-performance backend microservices, decentralized blockchain networks (Layer 1, 2 & 3), real-time AI/ML signal processing systems, and ROS2 robotics modules. Currently, I serve as Software Technical Lead & Senior SW Engineer at Sensifai, leading the engineering of scalable SaaS platforms integrating deep learning, video recognition, robotics, and edge IoT pipelines.
+
+## Contact & Links
+- GitHub: https://github.com/ja7ad
+- LinkedIn: https://www.linkedin.com/in/ja7ad/
+- Twitter / X: https://twitter.com/Ja7adR
+- Email: ja7ad@live.com
+
+## Technical & Leadership Skills
+- Software Architecture & System Design: Distributed systems, Go (Golang), Python, Node.js, Microservices, gRPC, Docker, Kubernetes
+- Technical Leadership & Business Strategy: Team leadership, B2B/B2C SaaS products, cloud cost & energy optimization, strategic roadmaps
+- Blockchain & Web3 Infrastructure: Layer 1, 2 & 3 architectures, consensus protocols, Filecoin Lotus Devnet, TrustWallet Core, Solana NFTs
+- Robotics, IoT & AI Systems: ROS2 (Robot Operating System) module engineering, real-time IoT pipelines, MQTT, ThingsBoard, PostgreSQL, MongoDB, Redis, TensorFlow
+
+## Featured Projects
+- DoRAI (ROS2): https://github.com/Sensifai-BV/dorai/
+- Q-WiSE: https://sensifai-qwise.hf.space/
+- Aerium: https://aerium.network/
+- Meilisearch Go SDK: https://github.com/meilisearch/meilisearch-go
+- TrustWallet Core: https://github.com/trustwallet/wallet-core
+
+## Blog Posts (Markdown Links)
+{{ range where site.RegularPages "Type" "in" (slice "posts" "blog") }}
+- [{{ .Title }}]({{ site.BaseURL }}posts/{{ .File.TranslationBaseName }}.md): {{ .Description }}
+{{ end }}

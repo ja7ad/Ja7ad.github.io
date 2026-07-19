@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Hugo
+public/
+resources/
+.hugo_build.lock
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,58 @@
+baseURL = 'https://javad.dev/'
+locale = 'en-us'
+title = 'Javad Rajabzadeh | Senior Software Engineer'
+uglyURLs = true
+
+# Render static files directly
+disableKinds = []
+
+# Define custom output formats for Markdown (.md) and llms.txt for AI bots
+[mediaTypes]
+  [mediaTypes."text/markdown"]
+    suffixes = ["md"]
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
+
+[outputFormats]
+  [outputFormats.MARKDOWN]
+    mediaType = "text/markdown"
+    isPlainText = true
+    isHTML = false
+    notAlternative = false
+
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    isPlainText = true
+    isHTML = false
+    notAlternative = false
+    baseName = "llms"
+
+[outputs]
+  home = ["HTML", "MARKDOWN", "LLMS", "RSS"]
+  section = ["HTML", "MARKDOWN"]
+  page = ["HTML", "MARKDOWN"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    style = 'onedark'
+
+[params]
+  description = "Explore the personal portfolio and tech blog of Javad Rajabzadeh. Expert in Blockchain, IoT, and High-Performance Software Architecture."
+  author = "Javad Rajabzadeh"
+  avatar = "https://avatars.githubusercontent.com/u/56496801?v=4"
+  twitterCreator = "@Ja7adR"

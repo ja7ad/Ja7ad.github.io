@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1><a href="{{ "/" | relURL }}" style="color: inherit; text-decoration: none;">Javad Rajabzadeh</a></h1>
+    <div class="subtitle">Senior Software Engineer</div>
+    
+    <nav>
+      [ <a href="{{ "/" | relURL }}">Home</a> ]
+      [ <a href="{{ "/#about" | relURL }}">About Me</a> ]
+      [ <a href="{{ "/#skills" | relURL }}">Skills</a> ]
+      [ <a href="{{ "/#experience" | relURL }}">Work History</a> ]
+      [ <a href="{{ "/#projects" | relURL }}">Projects</a> ]
+      [ <a href="{{ "/#honors" | relURL }}">Honors</a> ]
+      [ <a href="{{ "/posts/" | relURL }}">Writing</a> ]
+      [ <a href="{{ "/resume.html" | relURL }}">Resume</a> ]
+    </nav>
+  </header>
+
+  <hr class="double-line" />
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+</div>
+
+</body>
+</html>

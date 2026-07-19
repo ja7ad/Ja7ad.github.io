@@ -1,0 +1,40 @@
+<hr />
+
+<footer>
+  &copy; {{ now.Format "2006" }} Javad Rajabzadeh. All rights reserved. 
+  | Built with Hugo.
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" onclick="scrollToTop()" title="Go to top">^ Top</button>
+
+<script>
+  var backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+<!-- Mermaid JS Diagram Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose'
+    });
+  });
+</script>

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="resume-page">
+  <div class="resume-actions no-print">
+    <button onclick="window.print()" class="btn-print">
+      🖨️ Save as PDF / Print Resume
+    </button>
+  </div>
+
+  <article class="resume-content">
+    {{ .Content }}
+  </article>
+
+  <div class="resume-actions no-print" style="margin-top: 30px;">
+    [ <a href="{{ "/" | relURL }}">&laquo; Back to Homepage</a> ]
+  </div>
+</div>
+{{ end }}

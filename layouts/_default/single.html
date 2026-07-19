@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="post-single">
+  <div class="post-header">
+    <h2>{{ .Title }}</h2>
+    <div class="meta">
+      Published on: {{ .Date.Format "January 2, 2006" }}
+      {{ with .GetTerms "tags" }}
+      | Tags: {{ range . }}<a href="{{ .RelPermalink }}" class="tag-link"><code>#{{ .LinkTitle }}</code></a> {{ end }}
+      {{ end }}
+      | Reading time: {{ .ReadingTime }} min
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <hr class="double-line" />
+
+  <div class="post-navigation">
+    [ <a href="{{ "/posts/" | relURL }}">&laquo; Back to Writing</a> ]
+  </div>
+</article>
+{{ end }}

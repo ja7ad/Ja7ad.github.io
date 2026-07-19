@@ -1,0 +1,59 @@
+<meta charset="UTF-8" />
+<link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
+{{ range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Title | default site.Title }} ({{ .Name }})">
+{{ end -}}
+<meta http-equiv="Cache-Control" content="public, max-age=604800" />
+<title>{{ if .Title }}{{ .Title }} | {{ site.Title }}{{ else }}{{ site.Title }}{{ end }}</title>
+
+<!-- Open Graph / Twitter Meta Tags -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}" />
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
+<meta property="og:image" content="{{ site.Params.avatar }}" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{ .Permalink }}" />
+<meta property="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ site.Title }}{{ end }}" />
+<meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ site.Params.description }}{{ end }}" />
+<meta property="twitter:image" content="{{ site.Params.avatar }}" />
+<meta property="twitter:creator" content="{{ site.Params.twitterCreator }}" />
+
+<link rel="stylesheet" href="{{ "style.css" | relURL }}" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.Params.author }}",
+  "url": "{{ site.BaseURL }}",
+  "image": "{{ site.Params.avatar }}",
+  "sameAs": [
+    "https://github.com/ja7ad",
+    "https://www.linkedin.com/in/ja7ad/",
+    "https://twitter.com/Ja7adR",
+    "https://scholar.google.com/citations?user=PXkS0K0AAAAJ"
+  ],
+  "jobTitle": "Senior Software Engineer",
+  "description": "{{ site.Params.description }}"
+}
+</script>
+
+<!-- KaTeX support for LaTeX math equations -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\\\[', right: '\\\\]', display: true},
+      {left: '\\\\(', right: '\\\\)', display: false}
+    ],
+    throwOnError : false
+  });"></script>
