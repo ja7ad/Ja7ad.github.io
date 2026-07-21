@@ -61,5 +61,6 @@ Results-driven **Senior Software Engineer & Technical Lead** with 9+ years of ex
 ---
 
 ## Honors & Awards
+- **OC1 DORAI (Fortis / Sensifai)**: Directional and On-demand Robot Audio AI: Enhancing Human-Robot Interaction through Spatialized and Adaptive Audio Intelligence.
 - **OC2 AquaSense Winner (NebulOuS Meta-OS)**: Designed real-time IoT water quality monitoring system using MQTT, edge Raspberry Pi devices, and a cloud TensorFlow LSTM model with 95% anomaly detection accuracy.
 - **OC3 Q-WiSE Winner (Sensifai)**: Awarded for energy-efficient quantized speech enhancement AI on low-power devices.

@@ -57,5 +57,6 @@ Find me on the web:
 ---
 
 ## Honors & Awards
+- **OC1 - DORAI**: Directional and On-demand Robot Audio AI: Enhancing Human-Robot Interaction through Spatialized and Adaptive Audio Intelligence.
 - **OC2 - AquaSense Winner**: Real-time IoT water quality monitoring system using TensorFlow LSTM anomaly detection.
 - **OC3 - Q-WiSE**: Energy-efficient deep Wiener-filter speech enhancement.
